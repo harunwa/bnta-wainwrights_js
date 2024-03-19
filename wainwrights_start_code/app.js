@@ -28,8 +28,12 @@ document.getElementById('filter-form').addEventListener('submit', event => {
     filterWainwrights(filterValue);
 });
 
+// function to display results based on input
 
-
+const filterWainwrights = filterValue => {
+    const filteredWainwrights = wainwrightsData.filter(wainwright => wainwright.name.toLowerCase().includes(filterValue));
+    displayFilteredWainwrights(filteredWainwrights);
+};
 
 
 
