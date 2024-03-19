@@ -1,3 +1,5 @@
+let wainwrightsData;
+
 // function to fetch all Wainwrights
 
 const getAllWainwrights = async () => {
@@ -10,11 +12,21 @@ const getAllWainwrights = async () => {
 
 const displayWainwrights = () => {
     const wainwrightsList = document.getElementById('wainwrights-list');
+    wainwrightsList.innerHTML = '';
     wainwrightsData.forEach(wainwright => {
         const li = document.createElement('li');
-        li.textContent = `${wainwright.name} - Height: ${wainwright.height}m, Area: ${wainwright.area}`;
+        li.textContent = `${wainwright.name} - Height: ${wainwright.heightMetres}m, Area: ${wainwright.area.areaName}`;
         wainwrightsList.appendChild(li);
     });
 };
+
+
+
+
+
+
+
+
+
 
 getAllWainwrights();
