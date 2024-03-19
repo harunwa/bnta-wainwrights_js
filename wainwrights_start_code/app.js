@@ -35,6 +35,16 @@ const filterWainwrights = filterValue => {
     displayFilteredWainwrights(filteredWainwrights);
 };
 
+// function to filter displayed results based on an input
 
+const displayFilteredWainwrights = filteredWainwrights => {
+    const wainwrightsList = document.getElementById('wainwrights-list');
+    wainwrightsList.innerHTML = '';
+    filteredWainwrights.forEach(wainwright => {
+        const li = document.createElement('li');
+        li.textContent = `${wainwright.name} - Height: ${wainwright.heightMetres}m, Area: ${wainwright.area.areaName}`;
+        wainwrightsList.appendChild(li);
+    });
+};
 
 getAllWainwrights();
