@@ -12,7 +12,7 @@ const getAllWainwrights = async () => {
 
 const displayWainwrights = () => {
     const wainwrightsList = document.getElementById('wainwrights-list');
-    wainwrightsList.innerHTML = '';
+    wainwrightsList.innerText = '';
     wainwrightsData.forEach(wainwright => {
         const li = document.createElement('li');
         li.textContent = `${wainwright.name} - Height: ${wainwright.heightMetres}m, Area: ${wainwright.area.areaName}`;
@@ -20,7 +20,13 @@ const displayWainwrights = () => {
     });
 };
 
+// event listener for form
 
+document.getElementById('filter-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const filterValue = document.getElementById('filter-input').value.trim().toLowerCase();
+    filterWainwrights(filterValue);
+});
 
 
 
